@@ -1,0 +1,89 @@
+main {
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#info {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background: url("../img/login_bg.jpg") no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+#info_text {
+    position: absolute;
+    bottom: 0;
+    padding: 0 100px 0 100px;
+}
+
+#info_text h1 {
+    font-weight: 800;
+    color: gold;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+#info_text p {
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+}
+
+#login {
+    margin-top: 20px;
+}
+
+#login h3 {
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+}
+
+#sc_medias {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#sc_medias a {
+    background: cornsilk;
+    border: 1px solid #000;
+    border-radius: 2px;
+    padding: 5px 10px 5px 10px;
+    color: darkblue;
+    outline: none;
+    text-decoration: none;
+}
+
+#sc_medias a:hover {
+    background: bisque;
+}
+
+#sc_medias span {
+    color: #fff;
+    font-weight: 600;
+    margin: 5px 15px 0 15px;
+}

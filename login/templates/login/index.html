@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %} Вход {% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "login/css/style.css" %}">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="container" id="content">
+            <div class="container" id="info">
+                <div id="info_text">
+                    <h1>Place Remember</h1>
+                    <p>Привет! Ты недавно посетил интересное место и хочешь сохранить свои воспоминания на долго?
+                        Сохрани свои воспоминания с помощью нашего сервиса!</p>
+                </div>
+            </div>
+            <div class="container" id="login">
+                <h3>Войти с помощью социальных сетей</h3>
+                <div class="container" id="sc_medias">
+                    <a href=""><i class="fab fa-vk"></i> Вконтакте</a>
+                    <span>или</span>
+                    <a href=""><i class="fab fa-facebook"></i> Facebook</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
