@@ -117,7 +117,7 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = 'logout'
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = '/'
 
 # Vk auth
 SOCIAL_AUTH_VK_OAUTH2_KEY = '7842395'
@@ -133,5 +133,5 @@ SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.user.create_user',
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
-    'social_core.pipeline.user.user_details',
+    'social_core.pipeline.user.user_details'
 ]

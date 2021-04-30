@@ -4,4 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
-    return render(request, 'myPlaceRemember/index.html')
+    user = {
+        "name": request.user.first_name + " " + request.user.last_name
+    }
+    return render(request, 'myPlaceRemember/index.html', user)

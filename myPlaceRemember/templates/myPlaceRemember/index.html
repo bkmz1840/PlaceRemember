@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %} Мои воспоминания {% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "myPlaceRemember/css/style.css" %}">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <nav class="navbar" id="header">
+            <div class="container-fluid">
+                <span class="navbar-brand">{{ name }}</span>
+                <a href="{% url "logout" %}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </nav>
+
+        <div class="container" id="content">
+            <div class="container" id="remembers"></div>
+            <button class="btn btn-success btn-lg" id="btn_add">Добавить воспоминание</button>
+        </div>
+    </main>
+{% endblock %}
