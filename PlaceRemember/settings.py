@@ -124,6 +124,10 @@ SOCIAL_AUTH_VK_OAUTH2_KEY = '7842395'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'AR0WfekS2aPCTrJtOQgX'
 SOCIAL_AUTH_VK_APP_USER_MODE = 2
 
+# Facebook auth
+SOCIAL_AUTH_FACEBOOK_KEY = '463673328260410'
+SOCIAL_AUTH_FACEBOOK_SECRET = '4b8de1465b9754e612ecbe8d2247f6e5'
+
 SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.social_details',
     'social_core.pipeline.social_auth.social_uid',
