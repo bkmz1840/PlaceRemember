@@ -1,5 +1,4 @@
 from .models import Profile
-from django.shortcuts import get_object_or_404
 
 
 def get_avatar(backend, strategy, details, response,

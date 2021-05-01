@@ -4,6 +4,8 @@
 {% block title %} Мои воспоминания {% endblock %}
 {% block styles %}
     <link rel="stylesheet" href="{% static "myPlaceRemember/css/style.css" %}">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=cc5e87e9-573c-402a-ae9e-abba66a9f92d&lang=ru_RU" type="text/javascript"></script>
+    <script src="{% static 'myPlaceRemember/js/yamapAPI.js' %}" type="text/javascript"></script>
 {% endblock %}
 
 {% block main %}
@@ -36,6 +38,11 @@
                 </div>
 
                 <div class="modal-body">
+                    <div class="container" id="map">
+                        <p>Поставьте точку места вашего воспоминания! Просто кликните в нужное место :)<p>
+                        <input type="text" id="location" placeholder="Тут появится адрес с карты">
+                    </div>
+                    <h3>Hello!</h3>
                 </div>
 
                 <div class="modal-footer">
