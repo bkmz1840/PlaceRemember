@@ -8,16 +8,41 @@
 
 {% block main %}
     <main>
-        <nav class="navbar" id="header">
+        <nav class="navbar pt-0 pb-0" id="header">
             <div class="container-fluid">
-                <span class="navbar-brand">{{ name }}</span>
+                <div class="navbar-brand">
+                    <img src="{{ avatar }}" alt="" class="navbar-brand">
+                    {{ name }}
+                </div>
                 <a href="{% url "logout" %}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
             </div>
         </nav>
 
         <div class="container" id="content">
             <div class="container" id="remembers"></div>
-            <button class="btn btn-success btn-lg" id="btn_add">Добавить воспоминание</button>
+            <button class="btn btn-success btn-lg" id="btn_add" data-bs-toggle="modal" data-bs-target="#add_remember_modal">
+                Добавить воспоминание
+            </button>
         </div>
     </main>
+
+    <div class="modal fade" id="add_remember_modal" tabindex="-1" aria-labelledby="add_remember_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Новое воспоминание</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Сохранить</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 {% endblock %}
