@@ -1,0 +1,42 @@
+main {
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+#header {
+    background: gold;
+    margin-bottom: 20px;
+}
+
+#btn_logout i {
+    font-size: 30px;
+}
+
+#label_create_form {
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+}
+
+#form_create_remember label {
+    font-weight: 600;
+}
+
+#map {
+    display: block;
+    width: 100%;
+    height: 500px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#map yamaps {
+    display: block;
+}
