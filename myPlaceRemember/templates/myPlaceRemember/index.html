@@ -11,21 +11,21 @@
     <main>
         {% include 'myPlaceRemember/header.html' %}
         <div class="container mt-5 pb-5" id="content">
-            <div class="container" id="remembers">
-                {% if remembers %}
-                    {% for remember in remembers %}
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ remember.title }}</h5>
-                                <p class="card-text">{{ remember.body|truncatewords:15 }}</p>
-                                <a href="{{ remember.get_absolute_url }}" class="btn btn-primary">Посмотреть</a>
-                            </div>
+            {% if remembers %}
+                <div class="container" id="remembers">
+                {% for remember in remembers %}
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ remember.title }}</h5>
+                            <p class="card-text">{{ remember.body|truncatewords:15 }}</p>
+                            <a href="{{ remember.get_absolute_url }}" class="btn btn-primary">Посмотреть</a>
                         </div>
-                    {% endfor %}
-                {% else %}
-                    <h3>У вас нет ни одного воспоминания</h3>
-                {% endif %}
-            </div>
+                    </div>
+                {% endfor %}
+                </div>
+            {% else %}
+                <h3>У вас нет ни одного воспоминания</h3>
+            {% endif %}
             <a class="btn btn-success btn-lg mt-5" id="btn_add" href="{% url 'create_remember' %}">
                 Добавить воспоминание
             </a>
