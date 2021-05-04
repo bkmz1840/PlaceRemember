@@ -71,3 +71,10 @@ def remember_detail(request, slug):
     context = profile.get_name_and_avatar()
     context['remember'] = remember
     return render(request, 'myPlaceRemember/remember_detail.html', context)
+
+
+def remember_delete(request, slug):
+    profile = get_profile_data_by_user(request.user)
+    remember = RememberModel.objects.get(profile=profile, slug__iexact=slug)
+    remember.delete()
+    return redirect("home")

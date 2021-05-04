@@ -47,6 +47,9 @@ class RememberModel(models.Model):
     def get_absolute_update_url(self):
         return reverse('remember_update', kwargs={'slug': self.slug})
 
+    def get_absolute_delete_url(self):
+        return reverse('remember_delete', kwargs={'slug': self.slug})
+
     def save(self, *args, **kwargs):
         self.slug = to_slug_from_title(self.title, self.profile.user.username)
         super().save(*args, **kwargs)

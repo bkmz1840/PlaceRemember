@@ -28,8 +28,23 @@
                 <a href="{{ remember.get_absolute_update_url }}" class="btn btn-primary" id="btn_edit">
                     Редактировать
                 </a>
-                <a class="btn btn-danger" id="btn_del">Удалить</a>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal_confirm">Удалить</button>
             </div>
         </div>
     </main>
+
+    <div class="modal fade" id="modal_confirm" tabindex="-1" aria-labelledby="modal_confirm_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Удалить воспоминание?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ remember.get_absolute_delete_url }}" class="btn btn-danger">Да</a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Нет</button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
