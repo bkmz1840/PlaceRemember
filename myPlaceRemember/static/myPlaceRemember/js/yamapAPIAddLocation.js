@@ -4,7 +4,8 @@ function init() {
     locationInput.disabled = true;
     let myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
-        zoom: 6
+        zoom: 6,
+        controls: ['typeSelector', 'fullscreenControl', 'zoomControl']
     });
     myMap.events.add('click', function (e) {
         var currentPoint = e.get('coords');

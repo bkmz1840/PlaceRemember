@@ -1,0 +1,11 @@
+#header {
+    background: gold;
+}
+
+#btn_header_home {
+    margin-right: 15px;
+}
+
+#btn_header_home i, #btn_header_logout {
+    font-size: 30px;
+}

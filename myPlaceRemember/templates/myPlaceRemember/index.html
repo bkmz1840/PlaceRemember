@@ -4,6 +4,7 @@
 {% block title %} Мои воспоминания {% endblock %}
 {% block styles %}
     <link rel="stylesheet" href="{% static "myPlaceRemember/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "myPlaceRemember/css/style_header.css" %}">
 {% endblock %}
 
 {% block main %}
@@ -16,8 +17,8 @@
                         <div class="card text-center">
                             <div class="card-body">
                                 <h5 class="card-title">{{ remember.title }}</h5>
-                                <p class="card-text">{{ remember.body }}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <p class="card-text">{{ remember.body|truncatewords:15 }}</p>
+                                <a href="{{ remember.get_absolute_url }}" class="btn btn-primary">Посмотреть</a>
                             </div>
                         </div>
                     {% endfor %}

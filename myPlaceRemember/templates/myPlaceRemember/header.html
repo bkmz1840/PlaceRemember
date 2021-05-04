@@ -4,6 +4,9 @@
             <img src="{{ avatar }}" alt="" class="navbar-brand">
             {{ name }}
         </div>
-        <a href="{% url "logout" %}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+        <div>
+            <a href="{% url "home" %}" id="btn_header_home"><i class="fas fa-home"></i></a>
+            <a href="{% url "logout" %}" id="btn_header_logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
     </div>
 </nav>

@@ -15,19 +15,3 @@ main {
     align-items: center;
     margin: auto;
 }
-
-#remembers {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 20px;
-}
-
-.card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#btn_add {
-    font-weight: 600;
-}

@@ -8,15 +8,6 @@ main {
     overflow: auto;
 }
 
-#header {
-    background: gold;
-    margin-bottom: 20px;
-}
-
-#btn_logout i {
-    font-size: 30px;
-}
-
 #label_create_form {
     color: #fff;
     font-weight: 600;

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 from login.models import Profile
@@ -36,8 +36,27 @@ class CreateRememberView(View):
         if bound_form.is_valid():
             new_remember = bound_form.save(profile)
             new_remember.save()
-            return redirect('myPlaceRemember/')
+            return redirect('home')
         context = profile.get_name_and_avatar()
         context['form'] = bound_form
         return render(request, 'myPlaceRemember/create_remember.html',
                       context)
+
+
+class UpdateRememberView(View):
+    def get(self, request, slug):
+        profile = get_profile_data_by_user(request.user)
+        remember = RememberModel.objects.get(profile=profile, slug__iexact=slug)
+        bound_form = RememberModelForm(remember)
+        context = profile.get_name_and_avatar()
+        context['remember'] = remember
+        context['form'] = bound_form
+        return render(request, "myPlaceRemember/update_remember.html", )
+
+
+def remember_detail(request, slug):
+    profile = get_profile_data_by_user(request.user)
+    remember = RememberModel.objects.get(slug__iexact=slug)
+    context = profile.get_name_and_avatar()
+    context['remember'] = remember
+    return render(request, 'myPlaceRemember/remember_detail.html', context)
