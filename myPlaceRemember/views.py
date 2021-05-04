@@ -34,8 +34,7 @@ class CreateRememberView(View):
         bound_form = RememberModelForm(request.POST)
         profile = get_profile_data_by_user(request.user)
         if bound_form.is_valid():
-            new_remember = bound_form.save(profile)
-            new_remember.save()
+            bound_form.save_form(profile)
             return redirect('home')
         context = profile.get_name_and_avatar()
         context['form'] = bound_form
@@ -47,11 +46,23 @@ class UpdateRememberView(View):
     def get(self, request, slug):
         profile = get_profile_data_by_user(request.user)
         remember = RememberModel.objects.get(profile=profile, slug__iexact=slug)
-        bound_form = RememberModelForm(remember)
+        bound_form = RememberModelForm(instance=remember)
         context = profile.get_name_and_avatar()
         context['remember'] = remember
         context['form'] = bound_form
-        return render(request, "myPlaceRemember/update_remember.html", )
+        return render(request, "myPlaceRemember/update_remember.html", context)
+
+    def post(self, request, slug):
+        profile = get_profile_data_by_user(request.user)
+        remember = RememberModel.objects.get(profile=profile, slug__iexact=slug)
+        bound_form = RememberModelForm(request.POST, instance=remember)
+        if bound_form.is_valid():
+            remember = bound_form.save()
+            return redirect("remember_detail", slug=remember.slug)
+        context = profile.get_name_and_avatar()
+        context['remember'] = remember
+        context['form'] = bound_form
+        return render(request, "myPlaceRemember/update_remember.html", context)
 
 
 def remember_detail(request, slug):
