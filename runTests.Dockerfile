@@ -6,4 +6,3 @@ RUN pip install -r requirements.txt
 RUN pip install coverage
 COPY . .
 CMD ["python", "manage.py", "test"]
-
