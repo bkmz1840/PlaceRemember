@@ -1,16 +1,16 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@ze2=+3ivdh@x^s!$mru#&2=gcpqfla@+1xe1c8gxf87wh$17s'
+SECRET_KEY = os.environ\
+    .get("DJANGO_PLACE_REMEMBER_TOKEN",
+         'django-insecure-@ze2=+3ivdh@x^s!$mru#&2=gcpqfla@+1xe1c8gxf87wh$17s')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 INSTALLED_APPS = [
