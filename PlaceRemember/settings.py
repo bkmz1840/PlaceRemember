@@ -126,9 +126,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'https://placeremembers.herokuapp.com/'
+LOGIN_REDIRECT_URL = ''
 LOGOUT_URL = 'logout'
-LOGOUT_REDIRECT_URL = 'https://placeremembers.herokuapp.com/'
+LOGOUT_REDIRECT_URL = ''
 
 # Vk auth
 SOCIAL_AUTH_VK_OAUTH2_KEY = os.environ.get("PLACE_REMEMBER_VK_KEY")
