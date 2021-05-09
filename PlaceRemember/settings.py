@@ -12,6 +12,7 @@ SECRET_KEY = os.environ\
          'django-insecure-@ze2=+3ivdh@x^s!$mru#&2=gcpqfla@+1xe1c8gxf87wh$17s')
 
 DEBUG = False
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['placeremembers.herokuapp.com', '127.0.0.1']
 
