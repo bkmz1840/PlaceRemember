@@ -14,5 +14,4 @@ def get_avatar(backend, strategy, details, response,
             profile.avatar = url
         except:
             profile = Profile.objects.create(user=user, avatar=url)
-        finally:
-            profile.save()
+        profile.save()
