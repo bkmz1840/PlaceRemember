@@ -2,6 +2,11 @@
     background: gold;
 }
 
+#user_avatar {
+    width: 300px;
+    height: 300px;
+}
+
 #btn_header_home {
     margin-right: 15px;
 }
